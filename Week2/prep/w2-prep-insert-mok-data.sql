@@ -45,9 +45,10 @@ INSERT INTO ingredients (name) VALUES
 ('Eggs'),
 ('Soy sauce'),
 ('Sugar');
+ON CONFLICT (name) DO NOTHING;
 
 -- 5. Recipes
-INSERT INTO recipes (name, cuisine_id, place_id, main_ingredient_id) VALUES
+INSERT INTO recipes (name, cuisine_id, main_ingredient_id, instructions) VALUES
 ('No-Bake Cheesecake', NULL, NULL, 1),
 ('Roasted Brussels Sprouts', NULL, NULL, 2),
 ('Mac & Cheese', NULL, NULL, 3),
