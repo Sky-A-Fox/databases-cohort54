@@ -1,14 +1,14 @@
 -- Очищаем существующие таблицы (для повторного запуска) -- Drop existing tables (for re-running the script)
-DROP TABLE IF EXISTS recipe_ingredient_amounts CASCADE;
-DROP TABLE IF EXISTS recipe_methods CASCADE;
-DROP TABLE IF EXISTS recipe_ingredients CASCADE;
-DROP TABLE IF EXISTS recipe_categories CASCADE;
-DROP TABLE IF EXISTS recipes CASCADE;
-DROP TABLE IF EXISTS cooking_methods CASCADE;
-DROP TABLE IF EXISTS ingredients CASCADE;
-DROP TABLE IF EXISTS main_ingredients CASCADE;
-DROP TABLE IF EXISTS categories CASCADE;
 DROP TABLE IF EXISTS cuisines CASCADE;
+DROP TABLE IF EXISTS main_ingredients CASCADE;
+DROP TABLE IF EXISTS ingredients CASCADE;
+DROP TABLE IF EXISTS categories CASCADE;
+DROP TABLE IF EXISTS cooking_methods CASCADE;
+DROP TABLE IF EXISTS recipes CASCADE;
+DROP TABLE IF EXISTS recipe_categories CASCADE;
+DROP TABLE IF EXISTS recipe_ingredients CASCADE;
+DROP TABLE IF EXISTS recipe_methods CASCADE;
+DROP TABLE IF EXISTS recipe_ingredient_amounts CASCADE;
 
 
 
