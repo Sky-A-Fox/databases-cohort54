@@ -1,0 +1,7 @@
+{
+  "name": "ex2-transactions",
+  "type": "module",
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}

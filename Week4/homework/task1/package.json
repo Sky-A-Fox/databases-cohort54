@@ -1,0 +1,7 @@
+{
+  "name": "ex1-aggregation",
+  "dependencies": {
+    "mongodb": "^6.0.0",
+    "csv-parser": "^3.0.0"
+  }
+}
