@@ -2,13 +2,13 @@ import { setupDatabase } from './setup.js';
 import { transferMoney } from './transfer.js';
 
 async function main() {
-  // 1. Настраиваем базу данных
+  // 1. Настраиваем базу данных --- setup the database
   await setupDatabase();
   
-  // 2. Выполняем перевод
+  // 2. Выполняем перевод --- perform a transfer
   await transferMoney(101, 102, 1000, "Test transfer");
   
-  // 3. Проверяем результат
+  // 3. Проверяем результат --- check the result
   const { MongoClient } = await import('mongodb');
   const client = new MongoClient('mongodb://localhost:27017/?replicaSet=rs0&directConnection=true');
   

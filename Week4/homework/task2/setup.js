@@ -7,10 +7,10 @@ export async function setupDatabase() {
     await client.connect();
     const collection = client.db('bank_db').collection('accounts');
     
-    // Очищаем коллекцию
+    // Очищаем коллекцию --- clear the collection
     await collection.deleteMany({});
     
-    // Создаем тестовые счета
+    // Создаем тестовые счета --- create test accounts
     const accounts = [
       {
         account_number: 101,
@@ -58,5 +58,4 @@ export async function setupDatabase() {
   }
 }
 
-// Для тестирования
 // setupDatabase();

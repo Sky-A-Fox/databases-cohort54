@@ -7,12 +7,12 @@ export async function transferMoney(fromAccount, toAccount, amount, remark) {
     await client.connect();
     const collection = client.db('bank_db').collection('accounts');
     
-    // Начинаем транзакцию
+    // Начинаем транзакцию --- start a transaction
     const session = client.startSession();
     
     try {
       const result = await session.withTransaction(async () => {
-        // 1. Проверяем существование счетов
+        // 1. Проверяем существование счетов --- check account existence
         const fromAcc = await collection.findOne(
           { account_number: fromAccount },
           { session }
@@ -26,12 +26,12 @@ export async function transferMoney(fromAccount, toAccount, amount, remark) {
           throw new Error('Account not found');
         }
         
-        // 2. Проверяем достаточно ли денег
+        // 2. Проверяем достаточно ли денег на счете отправителя --- check sufficient funds
         if (fromAcc.balance < amount) {
           throw new Error('Insufficient funds');
         }
         
-        // 3. Обновляем балансы
+        // 3. Обновляем балансы и добавляем записи об изменениях --- update balances and add change records
         const lastChangeFrom = fromAcc.account_changes.length;
         const lastChangeTo = toAcc.account_changes.length;
         
